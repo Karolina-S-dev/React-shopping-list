@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import "./assets/css/App.css";
+import ShoppingCard from "./components/ShoppingCard";
+import {shoppingList} from "./utils/mockTasks"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+  return(
+    <>
+    <ShoppingCard task = {shoppingList[0]}/>
+    </>
+  )
 }
 
 export default App;

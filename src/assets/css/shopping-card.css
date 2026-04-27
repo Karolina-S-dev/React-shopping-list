@@ -1,0 +1,34 @@
+.shopping-card {
+  margin: 5rem 0 0 5rem;
+  max-width: 35rem;
+  background: linear-gradient(135deg, #6366f1, #a14fee);
+  box-shadow: 0 10px 30px rgba(180, 130, 216, 0.3);
+  color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  line-height: 4rem;
+  font-size: 2rem;
+}
+
+h3 {
+  color: #0f172a;
+  font-weight: 700;
+  text-align: center;
+}
+.quantity-control-div {
+  display: flex;
+  gap: 2rem;
+}
+.quantity-control {
+  background-color: rgb(99, 32, 187);
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

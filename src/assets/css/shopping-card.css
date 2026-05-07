@@ -17,8 +17,14 @@ h3 {
 }
 .quantity-control-div {
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
 }
+
+.buttons-div{
+  display: flex;
+  gap: 4rem;
+}
+
 .quantity-control {
   background-color: rgb(99, 32, 187);
   color: #fff;
@@ -32,3 +38,4 @@ h3 {
   align-items: center;
   cursor: pointer;
 }
+

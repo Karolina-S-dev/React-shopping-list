@@ -1,13 +1,13 @@
 import "./assets/css/App.css";
 import ShoppingCard from "./components/ShoppingCard";
-import {shoppingList} from "./utils/mockTasks"
+import { shoppingList } from "./utils/mockTasks";
 
-function App(){
-  return(
+function App() {
+  return (
     <>
-    <ShoppingCard task = {shoppingList[0]}/>
-    </>
-  )
+      <ShoppingCard shoppingList={shoppingList[0]} />
+      </>
+  );
 }
 
 export default App;

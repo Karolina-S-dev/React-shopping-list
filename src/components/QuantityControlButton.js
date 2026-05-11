@@ -1,14 +1,16 @@
 
-const QuantityControlButton = ({ children, type, onClick }) => {
+
+
+const QuantityControlButton = ({ children, type, onClick,disabled }) => {
   return (
     <div>
       {type === "add" ? (
-        <button className="quantity-control" onClick={onClick}>
+        <button className="quantity-btn" onClick={onClick} disabled={disabled}>
           {children}
         </button>
       ) : null}
       {type === "reduce" ? (
-        <button className="quantity-control" onClick={onClick}>
+        <button className="quantity-btn" onClick={onClick} disabled={disabled}>
           {children}
         </button>
       ) : null}

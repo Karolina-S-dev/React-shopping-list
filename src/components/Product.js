@@ -22,19 +22,25 @@ const Product = ({ product, setProducts }) => {
   };
 
   return (
-    <div>
-      <p>Product: {product.name}</p>
-      <p>Status: {product.bought ? "Bought" : "Not bought"}</p>
-      <div className="quantity-control-div">
-        <p>Amount: {product.amount}</p>
-        <div className="buttons-div">
-          <QuantityControlButton type={"add"} onClick={handleIncrease}>
-            +
-          </QuantityControlButton>
-          <QuantityControlButton type={"reduce"} onClick={handleDecrease}>
-            -
-          </QuantityControlButton>
-        </div>
+    <div className="product-row">
+      <p className="product-name">{product.name}</p>
+      <div className="amount-row">
+        <input className="product-checkbox" type="checkbox" />
+        <QuantityControlButton
+          type={"reduce"}
+          onClick={handleDecrease}
+          disabled={product.amount === 0} //przycisk usuwania produktów nieaktywny
+        >
+          -
+        </QuantityControlButton>
+        <p className="product-amount">{product.amount}</p>
+        <QuantityControlButton
+          type={"add"}
+          onClick={handleIncrease}
+          disabled={product.amount === 20}
+        >
+          +
+        </QuantityControlButton>
       </div>
     </div>
   );

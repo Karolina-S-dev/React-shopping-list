@@ -2,6 +2,7 @@ export const shoppingList = [
   {
     title: "Shopping list for the weekend",
     shoppingDate: "2026-04-24",
+    completed: false,
     products: [
       {
         name: "Milk",
@@ -28,6 +29,7 @@ export const shoppingList = [
   {
     title: "Rossmann",
     shoppingDate: "2026-04-24",
+    completed: false,
     products: [
       {
         name: "Ham",
@@ -54,6 +56,7 @@ export const shoppingList = [
   {
     title: "Dino",
     shoppingDate: "2026-04-24",
+    completed: true,
     products: [
       {
         name: "Cola",

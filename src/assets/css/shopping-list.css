@@ -1,0 +1,22 @@
+.shopping-lists-container {
+  display: flex;
+}
+
+.shopping-lists {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(50% - 2rem);
+  padding: 3rem;
+  align-items: center;
+}
+
+.shopping-lists h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+}

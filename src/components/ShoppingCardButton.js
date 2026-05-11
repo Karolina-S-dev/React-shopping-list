@@ -1,14 +1,14 @@
-const ShoppingCardButton = ({ type, children }) => {
+const ShoppingCardButton = ({ type, children,onClick }) => {
   return (
     <>
       {type === "complete" ? (
-        <button className="btn btn-green">
+        <button className="btn btn-complete" onClick={onClick}>
           <ion-icon name="checkmark-outline"></ion-icon>
           {children}
         </button>
       ) : null}
       {type === "delete" ? (
-        <button className="btn btn-red">
+        <button className="btn btn-delete" onClick={onClick}>
           <ion-icon name="trash-outline"></ion-icon>
           {children}
         </button>

@@ -22,8 +22,8 @@ const Product = ({ product, setProducts }) => {
   };
 
   return (
-    <div className="product-row">
-      <p className="product-name">{product.name}</p>
+    <div className="card-product-row">
+      <p>{product.name}</p>
       <div className="amount-row">
         <input className="product-checkbox" type="checkbox" />
         <QuantityControlButton

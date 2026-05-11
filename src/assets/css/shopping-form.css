@@ -1,32 +1,63 @@
 .shopping-form {
-  width: 30rem;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+  width: 60rem;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   color: #000;
   border-radius: 1rem;
-  margin: 3rem;
-  display: flex;
   flex-direction: column;
   padding: 2rem;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(50% - 2rem);
+}
+
+.shopping-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.shopping-form-header ion-icon {
+  background-color: #f2e6ff;
+  color: #6600cc;
+  height: 2.8rem;
+  width: 2.8rem;
+  padding: 1rem;
+  border-radius: 50%;
 }
 
 .shopping-form-title {
   color: #111827;
   font-weight: 700;
-  text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   padding: 0.8rem;
 }
 
 .shopping-form label {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .shopping-form input {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 8px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  border: 2px solid #e0e0eb;
 }
 
 .form-button {
@@ -37,11 +68,12 @@
   font-weight: 600;
   border-radius: 8px;
   color: #fff;
-  background-color: #400080;
+  background-color: #7c3aed;
   border: 2px solid #5900b3;
   margin-top: 1.5rem;
-  align-self: center;
   transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1.6rem;
 }
 
 .form-button:hover {
@@ -49,4 +81,8 @@
   background-color: #6600cc;
 }
 
-
+.form-button span {
+  font-size: 2.2rem;
+  font-weight: 400;
+  padding-right: 1.3rem;
+}

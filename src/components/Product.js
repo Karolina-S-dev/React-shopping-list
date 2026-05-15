@@ -21,15 +21,31 @@ const Product = ({ product, setProducts }) => {
     );
   };
 
+  //odznaczenie produktu jako kupiony
+  const handleBought = () => {
+    setProducts((prev) =>
+      prev.map((item) =>
+        item.name === product.name ? { ...item, bought: !item.bought } : item,
+      ),
+    );
+    
+  };
+  console.log(product.bought);
+
   return (
-    <div className="card-product-row">
+    <div className={product.bought ? "card-product-row bought" : "card-product-row"}>
       <p>{product.name}</p>
       <div className="amount-row">
-        <input className="product-checkbox" type="checkbox" />
+        <input
+          className="product-checkbox"
+          type="checkbox"
+          checked={product.bought}
+          onChange={handleBought}
+        />
         <QuantityControlButton
           type={"reduce"}
           onClick={handleDecrease}
-          disabled={product.amount === 0} //przycisk usuwania produktów nieaktywny
+          disabled={product.amount === 0 || product.bought} //przycisk usuwania produktów nieaktywny
         >
           -
         </QuantityControlButton>
@@ -37,7 +53,7 @@ const Product = ({ product, setProducts }) => {
         <QuantityControlButton
           type={"add"}
           onClick={handleIncrease}
-          disabled={product.amount === 20}
+          disabled={product.amount === 20 || product.bought}
         >
           +
         </QuantityControlButton>

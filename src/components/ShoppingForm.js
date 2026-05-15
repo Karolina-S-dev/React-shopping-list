@@ -1,28 +1,75 @@
 import { useState } from "react";
 import "../assets/css/shopping-form.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ShoppingForm = ({ setShoppingData }) => {
   const [formData, setFormData] = useState({
     title: "",
     shoppingDate: "",
+    completed: false,
     product: "",
     amount: 0,
+    bought: false,
+    products: [],
   });
+
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+    const newProduct = {
+      name: formData.product,
+      bought: formData.bought,
+      amount: formData.amount,
+    };
+
+    if (formData.product === "") {
+      toast.error("Aby dodać produkt musisz wpisać nazwę", {
+        position: "top-center",
+        className: "toast-error",
+      });
+      return;
+    }
+    if (formData.amount <= 0) {
+      toast.error("Aby dodać produkt musisz wpisać ilość", {
+        position: "top-center",
+        className: "toast-error",
+      });
+      return;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      products: [...prev.products, newProduct],
+      // czyszczenie formularza produktu
+      product: "",
+      amount: 0,
+    }));
+  };
+
+  console.log(formData.products);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     //walidacja formularza
     if (formData.title === "") {
+      toast.error("Aby dodać listę zakupów musisz podać tytuł", {
+        position: "top-center",
+        className: "toast-error",
+      });
       return;
     }
     if (formData.shoppingDate === "") {
+      toast.error("Aby dodać listę zakupów musisz podać datę", {
+        position: "top-center",
+        className: "toast-error",
+      });
       return;
     }
-    if (formData.product === "") {
-      return;
-    }
-    if (formData.product <= 0) {
+    if (formData.products.length === 0 && formData.product ==="") {
+      toast.error("Aby dodać listę zakupów musisz podać produkt", {
+        position: "top-center",
+        className: "toast-error",
+      });
       return;
     }
 
@@ -32,22 +79,23 @@ const ShoppingForm = ({ setShoppingData }) => {
         title: formData.title,
         shoppingDate: formData.shoppingDate,
         completed: false,
-        products: [
-          {
-            name: formData.product,
-            amount: Number(formData.amount),
-            bought: false,
-          },
-        ],
+        products: formData.products,
       },
     ]);
+    toast.success("Dodano listę zakupów", {
+      position: "top-center",
+      className: "toast-success",
+    });
 
     // czyszczenie formularza
     setFormData({
       title: "",
       shoppingDate: "",
+      completed: false,
       product: "",
       amount: 0,
+      bought: false,
+      products: [],
     });
   };
 
@@ -70,7 +118,7 @@ const ShoppingForm = ({ setShoppingData }) => {
               placeholder="Shopping list title"
               value={formData.title}
               onChange={(event) => {
-                console.log(event.target.value);
+                // console.log(event.target.value);
                 setFormData((prev) => ({
                   ...prev,
                   title: event.target.value,
@@ -87,7 +135,7 @@ const ShoppingForm = ({ setShoppingData }) => {
               id="shoppingDate"
               value={formData.shoppingDate}
               onChange={(event) => {
-                console.log(event.target.value);
+                // console.log(event.target.value);
                 setFormData((prev) => ({
                   ...prev,
                   shoppingDate: event.target.value,
@@ -106,7 +154,7 @@ const ShoppingForm = ({ setShoppingData }) => {
               placeholder="Product name"
               value={formData.product}
               onChange={(event) => {
-                console.log(event.target.value);
+                // console.log(event.target.value);
                 setFormData((prev) => ({
                   ...prev,
                   product: event.target.value,
@@ -124,7 +172,7 @@ const ShoppingForm = ({ setShoppingData }) => {
               placeholder="Amount"
               value={formData.amount}
               onChange={(event) => {
-                console.log(event.target.value);
+                // console.log(event.target.value);
                 setFormData((prev) => ({
                   ...prev,
                   amount: event.target.value,
@@ -133,6 +181,10 @@ const ShoppingForm = ({ setShoppingData }) => {
             />
           </div>
         </div>
+
+        <button className="form-button" onClick={handleAddProduct}>
+          <span>+</span> Add product
+        </button>
 
         <button className="form-button" onClick={handleSubmit}>
           <span>+</span> Add list

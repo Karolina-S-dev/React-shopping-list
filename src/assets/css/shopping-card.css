@@ -70,7 +70,7 @@
 
 .quantity-btn:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .product-checkbox {
@@ -123,4 +123,11 @@
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+}
+
+.bought {
+  text-decoration: line-through;
+  text-decoration-color: #94a3b8;
+  text-decoration-thickness: 2px;
+  opacity: 0.6;
 }

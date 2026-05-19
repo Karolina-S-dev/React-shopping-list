@@ -10,34 +10,53 @@ const ShoppingCard = ({ list, setShoppingData }) => {
     console.log(list.completed);
     setShoppingData((prevLists) =>
       prevLists.map((prevItem) =>
-        prevItem.title === list.title
+        prevItem.date === list.date
           ? { ...prevItem, completed: true }
           : prevItem,
       ),
     );
   };
 
-  return (
-    <div className="shopping-card">
-      <h3>{list.title}</h3>
-      <p className="shopping-card-date">Shopping date: {list.shoppingDate}</p>
+  const handleDelete = () => {
+    console.log(list.completed);
+    setShoppingData((prevLists) =>
+      prevLists.map((prevItem) =>
+        prevItem.date === list.date
+          ? { ...prevItem, deleted: true }
+          : prevItem,
+      ),
+    );
+  };
 
-      {products.map((product) => (
-        <Product
-          key={product.name}
-          product={product}
-          setProducts={setProducts}
-        />
-      ))}
-      <div className="card-buttons">
-        {!list.completed && (
-          <ShoppingCardButton type={"complete"} onClick={handleComplete}>
-            Complete
-          </ShoppingCardButton>
-        )}
-        ;<ShoppingCardButton type={"delete"}>Delete</ShoppingCardButton>
-      </div>
-    </div>
+  return (
+    <>
+      {list.deleted === true ? null : (
+        <div className="shopping-card">
+          <h3>{list.title}</h3>
+          <p className="shopping-card-date">
+            Shopping date: {list.shoppingDate}
+          </p>
+
+          {products.map((product) => (
+            <Product
+              key={product.name}
+              product={product}
+              setProducts={setProducts}
+            />
+          ))}
+          <div className="card-buttons">
+            {!list.completed && (
+              <ShoppingCardButton type={"complete"} onClick={handleComplete}>
+                Complete
+              </ShoppingCardButton>
+            )}
+            <ShoppingCardButton type={"delete"} onClick={handleDelete}>
+              Delete
+            </ShoppingCardButton>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

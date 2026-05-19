@@ -6,7 +6,6 @@ import { shoppingList } from "./utils/mockTasks";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function App() {
   const [shoppingData, setShoppingData] = useState([]);
 
@@ -26,7 +25,7 @@ function App() {
         />
         <ShoppingList
           title="Completed shopping lists"
-          shoppingLists ={finishedShoppingLists}
+          shoppingLists={finishedShoppingLists}
           setShoppingData={setShoppingData}
         />
       </div>

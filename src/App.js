@@ -9,9 +9,11 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [shoppingData, setShoppingData] = useState([]);
 
-  const finishedShoppingLists = shoppingData.filter((list) => list.completed);
+  const finishedShoppingLists = shoppingData.filter(
+    (list) => list.completed && !list.deleted,
+  );
   const unfinishedShoppingLists = shoppingData.filter(
-    (list) => !list.completed,
+    (list) => !list.completed && !list.deleted,
   );
 
   return (
@@ -20,13 +22,13 @@ function App() {
       <div className="shopping-lists-container">
         <ShoppingList
           title="Active shopping lists"
-          titleEmpty="You don't have active shopping lists"
+          titleAlternative="You don't have active shopping lists"
           shoppingLists={unfinishedShoppingLists}
           setShoppingData={setShoppingData}
         />
         <ShoppingList
           title="Completed shopping lists"
-          titleEmpty="You don't have completed shopping lists"
+          titleAlternative="You don't have completed shopping lists"
           shoppingLists={finishedShoppingLists}
           setShoppingData={setShoppingData}
         />

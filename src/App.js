@@ -20,11 +20,13 @@ function App() {
       <div className="shopping-lists-container">
         <ShoppingList
           title="Active shopping lists"
+          titleEmpty="You don't have active shopping lists"
           shoppingLists={unfinishedShoppingLists}
           setShoppingData={setShoppingData}
         />
         <ShoppingList
           title="Completed shopping lists"
+          titleEmpty="You don't have completed shopping lists"
           shoppingLists={finishedShoppingLists}
           setShoppingData={setShoppingData}
         />

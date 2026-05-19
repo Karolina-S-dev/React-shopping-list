@@ -10,7 +10,7 @@ const ShoppingCard = ({ list, setShoppingData }) => {
     console.log(list.completed);
     setShoppingData((prevLists) =>
       prevLists.map((prevItem) =>
-        prevItem.date === list.date
+        prevItem.createdDate === list.createdDate
           ? { ...prevItem, completed: true }
           : prevItem,
       ),
@@ -21,7 +21,7 @@ const ShoppingCard = ({ list, setShoppingData }) => {
     console.log(list.completed);
     setShoppingData((prevLists) =>
       prevLists.map((prevItem) =>
-        prevItem.date === list.date
+        prevItem.createdDate === list.createdDate
           ? { ...prevItem, deleted: true }
           : prevItem,
       ),

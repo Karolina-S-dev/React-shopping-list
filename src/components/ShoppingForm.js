@@ -11,7 +11,6 @@ const ShoppingForm = ({ setShoppingData }) => {
     completed: false,
     product: "",
     amount: 0,
-    createdDate: Date.now(),
     bought: false,
     products: [],
   });
@@ -91,7 +90,7 @@ const ShoppingForm = ({ setShoppingData }) => {
         shoppingDate: formData.shoppingDate,
         completed: false,
         products: products,
-        date:formData.createdDate,
+        createdDate: Date.now(),
       },
     ]);
     toast.success("Dodano listę zakupów", {
@@ -106,7 +105,6 @@ const ShoppingForm = ({ setShoppingData }) => {
       completed: false,
       product: "",
       amount: 0,
-      createdDate:null,
       bought: false,
       products: [],
     });

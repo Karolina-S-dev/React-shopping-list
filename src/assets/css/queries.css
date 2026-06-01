@@ -1,0 +1,122 @@
+/* laptops and big tablets - 1024px - 1200px */
+@media only screen and (max-width: 1200px) {
+  .btn {
+    gap: 0.2rem;
+  }
+
+  .shopping-list {
+    max-width: 100%;
+    gap: 1rem;
+  }
+
+  .shopping-lists-container {
+    gap: 1rem;
+    margin: 0.5rem;
+  }
+
+  .shopping-card {
+    padding: 1rem;
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+
+  .amount-row {
+    gap: 0.8rem;
+  }
+
+  .shopping-lists {
+    flex-basis: calc(50% - 0.5rem);
+  }
+
+  .quantity-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .shopping-card p {
+    font-size: 1.5rem;
+  }
+
+  .shopping-card h3 {
+    font-size: 1.7rem;
+  }
+}
+
+/* tablets 768px - 1023px */
+@media only screen and (max-width: 1023px) {
+  .header-flex-row {
+    gap: 1rem;
+    margin: 2rem 1.5rem;
+  }
+
+  .form-button {
+    padding: 0.5rem 0;
+    margin-top: 0.8rem;
+  }
+
+  .shopping-list {
+    flex-direction: column;
+  }
+}
+
+/* mobile - phones */
+@media only screen and (max-width: 767px) {
+  .header-flex-row {
+    flex-direction: column;
+    margin: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .shopping-lists-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .shopping-form {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .shopping-form input {
+    padding: 1rem 0.2rem;
+  }
+
+  .shopping-card {
+    padding: 1.5rem;
+  }
+
+  .form-products-list {
+    padding: 1.8rem;
+  }
+}
+
+/* small mobile - phones*/
+@media only screen and (max-width: 400px) {
+  html,
+  body {
+    font-size: 9px;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .shopping-form {
+    flex-basis: 100%;
+  }
+
+  .card-buttons {
+    margin-top: 0.5rem;
+  }
+  .shopping-form input {
+    padding: 0.8rem 0.2rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.4rem;
+  }
+
+  .form-button {
+    padding: 0.4rem 0;
+  }
+}

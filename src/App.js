@@ -5,6 +5,8 @@ import ShoppingList from "./components/ShoppingList";
 import { shoppingList } from "./utils/mockTasks";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./assets/css/queries.css"
+
 
 function App() {
   const [shoppingData, setShoppingData] = useState([]);
@@ -22,13 +24,13 @@ function App() {
       <div className="shopping-lists-container">
         <ShoppingList
           title="Active shopping lists"
-          titleAlternative="You don't have active shopping lists"
+          titleAlternative="No shopping lists"
           shoppingLists={unfinishedShoppingLists}
           setShoppingData={setShoppingData}
         />
         <ShoppingList
           title="Completed shopping lists"
-          titleAlternative="You don't have completed shopping lists"
+          titleAlternative="No completed shopping lists"
           shoppingLists={finishedShoppingLists}
           setShoppingData={setShoppingData}
         />

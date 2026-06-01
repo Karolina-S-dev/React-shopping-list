@@ -1,7 +1,8 @@
 .shopping-form {
   display: flex;
   justify-content: center;
-  width: 60rem;
+  max-width: 65rem;
+  width: 100%;
   background: #fff;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   color: #000;
@@ -12,13 +13,14 @@
 
 .flex-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .flex-col {
   display: flex;
   flex-direction: column;
-  flex: 0 0 calc(50% - 2rem);
+  flex: 0 0 calc(50% - 0.5rem);
 }
 
 .shopping-form-header {
@@ -88,14 +90,15 @@
 
 .header-flex-row {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   justify-content: center;
-  margin: 3rem 0;
+  margin: 3rem 2rem 2rem 2rem;
   align-items: center;
 }
 
 .form-products-list {
-  min-width: 28rem;
+  max-width: 30rem;
+  width: 100%;
   height: fit-content;
   background: white;
   border-radius: 2rem;

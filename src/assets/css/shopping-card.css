@@ -22,7 +22,7 @@
   color: #111827;
   font-weight: 500;
   text-align: left;
-  font-size: 1.8rem;
+  font-size: 1.62rem;
 }
 
 .shopping-card-date {
@@ -48,6 +48,7 @@
   min-width: 2.8rem;
   font-size: 1.8rem;
   text-align: center !important;
+  padding-top: 0.5rem;
 }
 
 .quantity-btn {

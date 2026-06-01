@@ -92,7 +92,7 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin: 3rem 2rem 2rem 2rem;
+  padding: 3rem 2rem 2rem 2rem;
   align-items: center;
 }
 

@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# 🛒 Shopping List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive shopping list management application built with React. The app allows users to create shopping lists, manage products, track purchased items, and organize lists into active and completed sections.
 
-## Available Scripts
+## 📸 Preview
 
-In the project directory, you can run:
+![Application Preview](./src/assets/screenshot.jpg)
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Shopping List Management
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Create shopping lists with a custom title
+- Set a shopping date
+- Add multiple products to a single shopping list
+- Display active shopping lists
+- Move completed lists to a dedicated section
+- Delete shopping lists
 
-### `npm test`
+### Product Management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Add products with custom quantities
+- Increase and decrease product quantity
+- Mark products as purchased
+- Disable quantity controls for purchased products
+- Preview products before creating a shopping list
 
-### `npm run build`
+### User Experience
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Form validation
+- Success and error notifications
+- Responsive design
+- Clean and intuitive interface
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- JavaScript (ES6+)
+- React Hooks (`useState`)
+- React Toastify
+- CSS3
+- Ionicons
 
-### `npm run eject`
+## 🚀 Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/Karolina-S-dev/React-shopping-list.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Navigate to the project directory:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cd shopping-list
+```
 
-## Learn More
+Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the development server:
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📋 How to Use
 
-### Analyzing the Bundle Size
+### Creating a Shopping List
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Enter a shopping list title.
+2. Select a shopping date.
+3. Add products and quantities.
+4. Click **Add Product** to add multiple products.
+5. Click **Add List** to create the shopping list.
 
-### Making a Progressive Web App
+### Managing Products
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ➕ Increase quantity
+- ➖ Decrease quantity
+- ☑️ Mark as purchased
 
-### Advanced Configuration
+Purchased products become visually distinguished and their quantity controls are disabled.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Managing Shopping Lists
 
-### Deployment
+- ✅ Complete a shopping list
+- 🗑️ Delete a shopping list
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Completed shopping lists are automatically displayed in a separate section.
 
-### `npm run build` fails to minify
+## 📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application is fully responsive and optimized for:
+
+- Desktop devices
+- Tablets
+- Mobile devices
+
+## 🔍 Validation
+
+The application prevents users from:
+
+- Creating a list without a title
+- Creating a list without a shopping date
+- Adding products without a name
+- Adding products with invalid quantities
+
+Validation messages are displayed using React Toastify notifications.
+
+## 🧠 What I Learned
+
+During this project I practiced:
+
+- Component-based architecture in React
+- State management using React Hooks (`useState`)
+- Lifting state up between components
+- Conditional rendering
+- Dynamic list rendering
+- Form handling and validation
+- Event handling
+- Responsive layouts with CSS
+- User feedback with notifications
+
+Additionally, the project was built without state management libraries such as Redux, relying entirely on React Hooks and component communication.
+
+## 👩‍💻 Author
+
+**Karolina-S-dev**

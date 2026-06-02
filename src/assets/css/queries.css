@@ -46,6 +46,7 @@
   .header-flex-row {
     gap: 1rem;
     margin: 2rem 1.5rem;
+    padding-top: 0;
   }
 
   .form-button {
@@ -64,6 +65,7 @@
     flex-direction: column;
     margin: 1.5rem;
     gap: 1.5rem;
+    
   }
 
   .shopping-lists-container {

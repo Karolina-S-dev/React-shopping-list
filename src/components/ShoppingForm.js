@@ -3,6 +3,8 @@ import "../assets/css/shopping-form.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FormProductsList from "./FormProductsList";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const ShoppingForm = ({ setShoppingData }) => {
   const [formData, setFormData] = useState({
@@ -10,17 +12,19 @@ const ShoppingForm = ({ setShoppingData }) => {
     shoppingDate: "",
     completed: false,
     product: "",
-    amount: 0,
+    amount: "",
     bought: false,
     products: [],
   });
+
+  const [startDate, setStartDate] = useState(new Date());
 
   const handleAddProduct = (e) => {
     e.preventDefault();
     const newProduct = {
       name: formData.product,
       bought: formData.bought,
-      amount: formData.amount,
+      amount: Number(formData.amount),
     };
 
     if (formData.product === "") {
@@ -43,7 +47,7 @@ const ShoppingForm = ({ setShoppingData }) => {
       products: [...prev.products, newProduct],
       // czyszczenie formularza produktu
       product: "",
-      amount: 0,
+      amount: "",
     }));
   };
 
@@ -78,7 +82,7 @@ const ShoppingForm = ({ setShoppingData }) => {
     if (products.length === 0 && formData.product !== "") {
       products.push({
         name: formData.product,
-        amount: formData.amount,
+        amount: Number(formData.amount),
         bought: formData.bought,
       });
     }
@@ -87,7 +91,7 @@ const ShoppingForm = ({ setShoppingData }) => {
       ...prev,
       {
         title: formData.title,
-        shoppingDate: formData.shoppingDate,
+        shoppingDate: formData.shoppingDate.toLocaleDateString(),
         completed: false,
         products: products,
         createdDate: Date.now(),
@@ -104,7 +108,7 @@ const ShoppingForm = ({ setShoppingData }) => {
       shoppingDate: "",
       completed: false,
       product: "",
-      amount: 0,
+      amount: "",
       bought: false,
       products: [],
     });
@@ -113,7 +117,7 @@ const ShoppingForm = ({ setShoppingData }) => {
   return (
     <>
       <div className="header-flex-row">
-        <form className="shopping-form">
+        <form className="shopping-form box-shadow">
           <div className="shopping-form-header">
             <ion-icon name="bag-outline"></ion-icon>
             <p className="shopping-form-title">Add a shopping list</p>
@@ -141,18 +145,18 @@ const ShoppingForm = ({ setShoppingData }) => {
             {/*  -------DATE------ */}
             <div className="flex-col">
               <label htmlFor="shoppingDate">Shopping date</label>
-              <input
-                className="form-date common-style"
-                type="date"
+              <DatePicker
                 id="shoppingDate"
-                value={formData.shoppingDate}
-                onChange={(event) => {
-                  // console.log(event.target.value);
+                selected={startDate}
+                onChange={(date) => {
+                  setStartDate(date);
                   setFormData((prev) => ({
                     ...prev,
-                    shoppingDate: event.target.value,
+                    shoppingDate: date,
                   }));
                 }}
+                showIcon
+                toggleCalendarOnIconClick
               />
             </div>
           </div>
@@ -187,7 +191,7 @@ const ShoppingForm = ({ setShoppingData }) => {
                   // console.log(event.target.value);
                   setFormData((prev) => ({
                     ...prev,
-                    amount: event.target.value,
+                    amount: Number(event.target.value),
                   }));
                 }}
               />

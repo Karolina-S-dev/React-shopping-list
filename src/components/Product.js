@@ -4,7 +4,7 @@ const Product = ({ product, setProducts }) => {
   const handleIncrease = () => {
     setProducts((prev) =>
       prev.map((item) =>
-        item.name === product.name
+       item.name === product.name
           ? { ...item, amount: item.amount + 1 }
           : item,
       ),
@@ -28,12 +28,15 @@ const Product = ({ product, setProducts }) => {
         item.name === product.name ? { ...item, bought: !item.bought } : item,
       ),
     );
-    
   };
   console.log(product.bought);
 
   return (
-    <div className={product.bought ? "card-product-row bought" : "card-product-row"}>
+    <div
+      className={
+        product.bought ? "card-product-row bought" : "card-product-row"
+      }
+    >
       <p>{product.name}</p>
       <div className="amount-row">
         <input
@@ -53,7 +56,7 @@ const Product = ({ product, setProducts }) => {
         <QuantityControlButton
           type={"add"}
           onClick={handleIncrease}
-          disabled={product.amount === 20 || product.bought}
+          disabled={product.amount >= 100 || product.bought}
         >
           +
         </QuantityControlButton>

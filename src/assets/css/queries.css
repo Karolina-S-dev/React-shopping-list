@@ -39,14 +39,15 @@
   .shopping-card h3 {
     font-size: 1.7rem;
   }
+  .header-flex-row {
+    padding: 1.5rem;
+  }
 }
 
 /* tablets 768px - 1023px */
 @media only screen and (max-width: 1023px) {
   .header-flex-row {
     gap: 1rem;
-    margin: 2rem 1.5rem;
-    padding-top: 0;
   }
 
   .form-button {
@@ -63,9 +64,6 @@
 @media only screen and (max-width: 767px) {
   .header-flex-row {
     flex-direction: column;
-    margin: 1.5rem;
-    gap: 1.5rem;
-    
   }
 
   .shopping-lists-container {

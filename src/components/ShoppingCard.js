@@ -31,7 +31,7 @@ const ShoppingCard = ({ list, setShoppingData }) => {
   return (
     <>
       {list.deleted === true ? null : (
-        <div className="shopping-card">
+        <div className="shopping-card box-shadow">
           <h3>{list.title}</h3>
           <p className="shopping-card-date">
             Shopping date: {list.shoppingDate}
@@ -47,11 +47,11 @@ const ShoppingCard = ({ list, setShoppingData }) => {
           <div className="card-buttons">
             {!list.completed && (
               <ShoppingCardButton type={"complete"} onClick={handleComplete}>
-                Complete
+                <p>Complete</p>
               </ShoppingCardButton>
             )}
             <ShoppingCardButton type={"delete"} onClick={handleDelete}>
-              Delete
+              <p>Delete</p>
             </ShoppingCardButton>
           </div>
         </div>

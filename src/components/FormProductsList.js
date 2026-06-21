@@ -1,7 +1,7 @@
 const FormProductsList = ({ formData }) => {
   return (
     <>
-      <div className="form-products-list">
+      <div className="form-products-list box-shadow">
         <h3>Products in a basket</h3>
         {formData.products.length === 0 ? (
           <p>No products yet</p>

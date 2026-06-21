@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import FormProductsList from "./FormProductsList";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { enGB } from "date-fns/locale";
 
 const ShoppingForm = ({ setShoppingData }) => {
   const [formData, setFormData] = useState({
@@ -146,6 +147,7 @@ const ShoppingForm = ({ setShoppingData }) => {
             <div className="flex-col">
               <label htmlFor="shoppingDate">Shopping date</label>
               <DatePicker
+                locale={enGB}
                 id="shoppingDate"
                 selected={startDate}
                 onChange={(date) => {
